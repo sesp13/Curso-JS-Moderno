@@ -74,13 +74,6 @@ colorSelect.addEventListener('change', (e) => {
 function mostrarAutos(autosSeleccionados) {
   limpiarHtml();
 
-  if (autosSeleccionados.length === 0) {
-    const mensaje = document.createElement('p');
-    mensaje.textContent = 'Paila no hay autos';
-    resultado.appendChild(mensaje);
-    return
-  }
-
   autosSeleccionados.forEach(
     ({ marca, modelo, year, puertas, transmision, precio, color }) => {
       const autoHTML = document.createElement('p');
@@ -96,6 +89,14 @@ function limpiarHtml() {
   while (resultado.firstChild) {
     resultado.removeChild(resultado.firstChild);
   }
+}
+
+function noResultados() {
+  limpiarHtml();
+  const mensaje = document.createElement('div');
+  mensaje.classList.add('alerta', 'error');
+  mensaje.textContent = 'Paila no hay autos';
+  resultado.appendChild(mensaje);
 }
 
 function llenarYearSelect() {
@@ -117,7 +118,11 @@ function filtrarAuto() {
     .filter(filtrarTransmision)
     .filter(filtrarColor);
 
-  mostrarAutos(autosFiltrados);
+  if (autosFiltrados.length) {
+    mostrarAutos(autosFiltrados);
+  } else {
+    noResultados();
+  }
 }
 
 function filtrarMarca(auto) {
