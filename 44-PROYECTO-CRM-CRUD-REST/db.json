@@ -1,11 +1,25 @@
 {
   "clientes": [
     {
-      "nombre": "Juan NUEVO!",
-      "email": "correo2@correo.com",
-      "telefono": "12",
-      "empresa": "12212",
-      "id": 26
+      "nombre": "Santiago",
+      "email": "sespinosarte98@gmail.com",
+      "telefono": "123",
+      "empresa": "Empresita",
+      "id": 27
+    },
+    {
+      "nombre": "Simoncito",
+      "email": "sss1s@ddd.com",
+      "telefono": "123",
+      "empresa": "123",
+      "id": 28
+    },
+    {
+      "nombre": "Simon Cano",
+      "email": "simon@simon.com",
+      "telefono": "123456",
+      "empresa": "GoArbit",
+      "id": 29
     }
   ]
 }
